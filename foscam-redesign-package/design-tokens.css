@@ -1,0 +1,57 @@
+/* =========================================================================
+   FOSCAM CHILE — DESIGN TOKENS
+   =========================================================================
+   Sistema de variables del rediseño visual. No contiene reglas de layout ni
+   selectores del tema — solo declara el vocabulario. Las reglas que aplican
+   estos tokens a selectores reales del tema PRS01001 viven en
+   foscam-redesign-overrides.css.
+
+   DESPLIEGUE:
+   - Si el módulo "tm_themeoptions" (Configurador de temas) permite cargar
+     fuentes/colores custom desde el Back Office, los valores de fuente y
+     color de abajo pueden setearse ahí en vez de aquí (ver GUIA-DESPLIEGUE.md).
+   - Este archivo se carga DESPUÉS de theme.css/custom.css y ANTES de
+     foscam-redesign-overrides.css, para que las variables existan cuando se
+     usen.
+   ========================================================================= */
+
+/* Fuentes — self-hosted o Google Fonts con font-display: swap para evitar
+   bloqueo de render (FOIT). Si se self-hostean, reemplazar este @import por
+   @font-face declarations y actualizar GUIA-DESPLIEGUE.md. */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* Tipografía */
+  --font-heading: 'Space Grotesk', Arial, Helvetica, sans-serif;
+  --font-body: 'Inter', Arial, Helvetica, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+  /* Paleta */
+  --color-ink: #12181C;
+  --color-navy-deep: #0E2A38;
+  --color-signal-red: #D8402C;
+  --color-offwhite: #F6F5F2;
+  --color-white: #FFFFFF;
+  --color-taupe: #8A8377;
+  --color-signal-green: #2E9E6C;
+
+  /* Forma */
+  --radius-base: 16px;
+  --radius-pill: 999px;
+
+  /* Elevación */
+  --shadow-card: 0 4px 12px rgba(18, 24, 28, 0.08);
+  --shadow-card-hover: 0 12px 24px rgba(18, 24, 28, 0.12);
+
+  /* Espaciado editorial para labels/filtros (regla 5 del sistema) */
+  --label-letter-spacing: 0.05em;
+  --label-font-size: 12px;
+}
+
+/* NOTA IMPORTANTE sobre --border-radius:
+   El tema ya define una variable global --border-radius (hoy 30px, inyectada
+   por tm_themeoptions) que se usa en ~25 selectores del sitio para dar forma
+   "pill" a inputs, dropdowns, etc. NO la sobreescribimos aquí para no romper
+   esos ~25 usos existentes. En su lugar declaramos --radius-base (16px, para
+   cards) y --radius-pill (999px, para CTAs) como variables nuevas e
+   independientes. Ver foscam-redesign-overrides.css para dónde se aplican. */

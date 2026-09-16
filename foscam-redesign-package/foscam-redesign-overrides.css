@@ -1,0 +1,276 @@
+/* =========================================================================
+   FOSCAM CHILE — REDISEÑO VISUAL (overrides)
+   =========================================================================
+   Requiere design-tokens.css cargado antes que este archivo.
+
+   TODOS los selectores de abajo fueron confirmados contra el HTML real
+   renderizado en vivo (foscam.cl/19-camaras-de-exterior y la ficha de
+   producto V5P), no inventados. Donde no se pudo confirmar un selector con
+   certeza se deja un comentario "VERIFICAR EN FASE B".
+
+   REGLA DURA: este archivo solo cambia propiedades visuales (color,
+   tipografía, radio, sombra, spacing). Nunca renombra clases ni cambia
+   estructura DOM. Las siguientes clases/IDs son ganchos de JS/filtrado
+   confirmados y NO deben tocarse ni siquiera indirectamente vía selectores
+   que las oculten/muevan: .js-product-miniature, [data-id-product],
+   [data-id-product-attribute], .js-top-menu, #search_query_top,
+   .ap-btn-wishlist, .ap-btn-compare, .st-compare-bt-content,
+   .st-wishlist-bt-content, #blockcart-modal, .js-footer.
+   ========================================================================= */
+
+/* ---------------------------------------------------------------------
+   1. Header y footer — fondo navy, texto/iconos en blanco
+   --------------------------------------------------------------------- */
+#header,
+.header-top-main.bg_main,
+footer#footer.js-footer,
+.page-footer {
+  background-color: var(--color-navy-deep) !important;
+  color: var(--color-white);
+}
+
+#header a,
+#header .dropdown-item,
+footer#footer.js-footer a,
+footer#footer.js-footer p,
+footer#footer.js-footer h3,
+footer#footer.js-footer .h3 {
+  color: var(--color-white);
+}
+
+/* Iconos de wishlist/comparar/usuario/búsqueda sobre fondo oscuro.
+   stfeature (wishlist/comparar) y el ícono de usuario/búsqueda del tema
+   suelen ser <i class="material-icons"> o SVG con fill heredado de
+   currentColor; forzamos blanco sin tocar la clase que los identifica. */
+#header .material-icons,
+#header .ap-btn-wishlist,
+#header .ap-btn-compare,
+#header .search-icon,
+#header svg {
+  color: var(--color-white);
+  fill: var(--color-white);
+}
+
+/* Logo: si el logo actual es un PNG/JPG con fondo transparente y texto
+   oscuro, NO se puede recolorear por CSS — requiere un asset nuevo (SVG o
+   PNG) en blanco. Marcar en GUIA-DESPLIEGUE.md como pendiente de asset. */
+
+/* ---------------------------------------------------------------------
+   2. --color-signal-red es solo para "acción": CTA, precios, badges,
+      filtro activo. Nunca fondo decorativo ni borde genérico.
+   --------------------------------------------------------------------- */
+.product-price-and-shipping .price,
+.product-prices .price,
+#search_filters .facet .facet-label.active,
+#search_filters .facet .checked ~ span,
+.discount,
+.on-sale {
+  color: var(--color-signal-red);
+}
+
+/* ---------------------------------------------------------------------
+   3. Cards de producto
+   --------------------------------------------------------------------- */
+.product-miniature,
+.product_item {
+  border-radius: var(--radius-base);
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  overflow: hidden;
+}
+
+.product-miniature:hover,
+.product_item:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
+}
+
+.product-miniature .product-thumbnail img,
+.product_item .product-thumbnail img {
+  border-radius: var(--radius-base) var(--radius-base) 0 0;
+}
+
+/* ---------------------------------------------------------------------
+   4. Precios y specs técnicas en font-mono
+   --------------------------------------------------------------------- */
+.product-price-and-shipping .price,
+.product-prices .price,
+.current-price,
+.current-price-value,
+.product-quantities,
+[itemprop="sku"],
+.product-reference {
+  font-family: var(--font-mono);
+}
+
+/* Specs técnicas dentro de la ficha de producto (tabla de características).
+   VERIFICAR EN FASE B: confirmar el selector exacto de la tabla de features
+   una vez haya acceso al .tpl del producto (candidato: .data-sheet,
+   .product-features). */
+.data-sheet,
+.product-features .property {
+  font-family: var(--font-mono);
+}
+
+/* ---------------------------------------------------------------------
+   5. Categorías / labels de filtro — editorial uppercase
+   --------------------------------------------------------------------- */
+#search_filters .facet .facet-title,
+#search_filters .facet-label,
+.facets-title {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: var(--label-letter-spacing);
+  font-size: var(--label-font-size);
+  color: var(--color-taupe);
+}
+
+/* ---------------------------------------------------------------------
+   6. Botones — CTA primario pill, secundarios outline/ghost
+   --------------------------------------------------------------------- */
+.btn.btn-primary,
+#add-to-cart-or-refresh .btn.btn-primary,
+.product-add-to-cart .btn.btn-primary {
+  background-color: var(--color-signal-red);
+  border-color: var(--color-signal-red);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+
+.btn.btn-primary:hover {
+  background-color: #b6321f; /* --color-signal-red oscurecido ~15% */
+  border-color: #b6321f;
+}
+
+.btn.btn-default,
+.ap-btn-compare,
+.ap-btn-wishlist {
+  background-color: transparent;
+  border: 1px solid var(--color-taupe);
+  color: var(--color-taupe);
+  border-radius: var(--radius-pill);
+}
+
+.btn.btn-default:hover,
+.ap-btn-compare:hover,
+.ap-btn-wishlist:hover {
+  border-color: var(--color-signal-red);
+  color: var(--color-signal-red);
+}
+
+/* ---------------------------------------------------------------------
+   7. Secciones alternadas (home, CMS)
+   --------------------------------------------------------------------- */
+.section-alt-white { background-color: var(--color-white); }
+.section-alt-offwhite { background-color: var(--color-offwhite); }
+.section-alt-navy {
+  background-color: var(--color-navy-deep);
+  color: var(--color-white);
+}
+.section-alt-navy .h1,
+.section-alt-navy .h2,
+.section-alt-navy .h3 {
+  color: var(--color-white);
+}
+
+/* Estas clases (.section-alt-*) son NUEVAS — se agregan manualmente a los
+   contenedores de sección al insertar el bloque de estadísticas de
+   confianza (ver trust-stats-block.html) y al envolver bloques CMS
+   existentes. No reemplazan ninguna clase del tema. */
+
+/* ---------------------------------------------------------------------
+   8. Bloque de estadísticas de confianza
+   --------------------------------------------------------------------- */
+.trust-stats {
+  background-color: var(--color-navy-deep);
+  color: var(--color-white);
+  padding: 48px 16px;
+  text-align: center;
+}
+.trust-stats__grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.trust-stats__item {
+  min-width: 160px;
+}
+.trust-stats__number {
+  font-family: var(--font-mono);
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--color-white);
+  display: block;
+}
+.trust-stats__label {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-taupe);
+  text-transform: uppercase;
+  letter-spacing: var(--label-letter-spacing);
+}
+
+/* ---------------------------------------------------------------------
+   9. Testimonios (tmtestimonialcmsblock) — restyle de card
+   --------------------------------------------------------------------- */
+#tmtestimonialcmsblock .peoplesay-block,
+.testimonial .peoplesay-block {
+  background-color: var(--color-white);
+  border: 1px solid rgba(18, 24, 28, 0.08);
+  border-radius: var(--radius-base);
+  box-shadow: var(--shadow-card);
+  padding: 24px;
+}
+
+#tmtestimonialcmsblock .test-content::before,
+.testimonial .test-content::before {
+  content: '\201C';
+  color: var(--color-signal-red);
+  font-family: var(--font-heading);
+  font-size: 32px;
+  line-height: 1;
+}
+
+#tmtestimonialcmsblock .test-name,
+.testimonial .test-name {
+  font-family: var(--font-heading);
+  color: var(--color-ink);
+}
+
+/* ---------------------------------------------------------------------
+   10. Botón flotante de WhatsApp (bonwhatsappchat)
+   --------------------------------------------------------------------- */
+/* Decisión de marca del metaprompt: mantener el verde estándar de WhatsApp
+   para conservar reconocimiento inmediato. No se sobreescribe el color de
+   fondo del botón. Solo se homologa la tipografía del texto interno al
+   sistema nuevo para que no desentone (el bloque hoy usa
+   <h1 class="whatsappchat-subtitle"> y <h2 class="whatsappchat-title"> con
+   TAGS que se corrigen en Fase B — aquí solo se toca tipografía/color, no
+   la etiqueta HTML). */
+#bonwhatsappchat .whatsappchat-title,
+#bonwhatsappchat .whatsappchat-subtitle {
+  font-family: var(--font-heading);
+}
+#bonwhatsappchat .whatsappchat-descr {
+  font-family: var(--font-body);
+}
+
+/* ---------------------------------------------------------------------
+   Tipografía global de body/headings del tema
+   --------------------------------------------------------------------- */
+body,
+.product-title a {
+  font-family: var(--font-body);
+  color: var(--color-ink);
+}
+
+h1, h2, h3, h4,
+.h1, .h2, .h3, .h4,
+.product-title,
+.btn.btn-primary {
+  font-family: var(--font-heading);
+}

@@ -1,0 +1,54 @@
+FRAGMENTO A FUSIONAR — AggregateRating dentro del bloque Product existente
+=============================================================================
+El bloque JSON-LD "Product" YA EXISTE en el core de PrestaShop (confirmado
+en vivo en la ficha de producto V5P, ver plan). Este fragmento se agrega
+DENTRO de ese mismo objeto Product, como hermano de "offers", cuando el
+producto tenga al menos 1 reseña vía myprestacomments. Si un producto tiene
+0 reseñas, NO emitir este bloque para ese producto (Google penaliza
+AggregateRating sin reseñas reales).
+
+Ejemplo de cómo debería verse el bloque Product completo después del merge
+(usando el producto V5P como referencia, con datos de ejemplo — los valores
+reales de ratingValue/reviewCount deben salir de la tabla de
+myprestacomments, no inventarse):
+
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "Foscam V5P Cámara IP de exterior 5MP con Audio, Iluminación y Sirena incluida",
+  "description": "La V5P es una cámara de seguridad IP diseñada para ofrecer una vigilancia exterior robusta y de alta definición, proporcionando seguridad las 24 horas",
+  "category": "Cámaras de exterior",
+  "image": "https://foscam.cl/366-home_default/foscam-v5p-camara-ip-de-exterior-5mp-con-audio-iluminacion-y-sirena-incluida.jpg",
+  "sku": "V5P",
+  "mpn": "V5P",
+  "brand": { "@type": "Thing", "name": "Foscam" },
+
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "{{PROMEDIO_MYPRESTACOMMENTS}}",
+    "reviewCount": "{{TOTAL_RESEÑAS_MYPRESTACOMMENTS}}",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "CLP",
+    "price": "94990",
+    "url": "https://foscam.cl/camaras-de-exterior/2-foscam-v5p-camara-ip-de-exterior-5mp-con-audio-iluminacion-y-sirena-incluida.html",
+    "availability": "https://schema.org/InStock",
+    "seller": { "@type": "Organization", "name": "Foscam Chile" }
+  }
+}
+
+NOTA DE IMPLEMENTACIÓN (Fase B):
+- No es un archivo estático que se pega tal cual: {{PROMEDIO_MYPRESTACOMMENTS}}
+  y {{TOTAL_RESEÑAS_MYPRESTACOMMENTS}} deben salir dinámicamente de la
+  consulta que ya hace el módulo myprestacomments para pintar las estrellas
+  en la ficha de producto — no crear una fuente de datos nueva.
+- Ubicación probable del bloque Product original: un helper de datos
+  estructurados del core de PrestaShop (clase de servicio de structured
+  data) o el .tpl de cabecera del producto — confirmar ruta exacta cuando
+  haya acceso al código.
+- Validar el objeto final contra https://schema.org/AggregateRating
+  (requiere ratingValue y ya sea reviewCount o ratingCount).

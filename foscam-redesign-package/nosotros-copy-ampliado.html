@@ -1,0 +1,124 @@
+<!--
+  CMS "Nosotros" — copy ampliado para GEO
+  URL destino: https://foscam.cl/content/4-nosotros-somos-foscam (CMS id 4)
+
+  Conserva el contenido real ya existente (fundación en enero 2012,
+  certificaciones FCC/CE/ROHS, testimonios con foto) confirmado en vivo, y
+  agrega: NAP explícito, aclaración de distribución oficial, y una tabla
+  comparativa para ayudar a los motores de IA a entender el catálogo como
+  un sistema de decisión.
+
+  CAMPOS A CONFIRMAR ANTES DE PUBLICAR (marcados con {{...}}):
+  - {{DIRECCION_FISICA}}: no se encontró una dirección física en el sitio
+    en vivo. Si Foscam Chile opera solo online, usar la variante B más
+    abajo (sin LocalBusiness) en vez de la variante A.
+  - {{TELEFONO}}: se confirmó el número de WhatsApp +56 9 4949 2042 en el
+    sitio en vivo — usar ese si no hay otro número de atención.
+  - {{HORARIO}}: no encontrado en el sitio, confirmar con el cliente.
+  - {{ES_DISTRIBUIDOR_OFICIAL}}: el sitio no declara explícitamente si son
+    distribuidor oficial vs. reseller — redactar según la realidad legal
+    de la empresa, esto es una afirmación que no se debe inventar.
+-->
+
+<section class="cms-block">
+  <h3 class="page-subheading">Nuestra empresa</h3>
+  <p style="text-align:justify;"><strong class="dark">Foscam Chile es una
+  empresa internacional que vende cámaras de vigilancia y ofrece servicios
+  de instalación, configuración y mantención de equipos de seguridad.</strong></p>
+  <p style="text-align:justify;">Actualmente somos reconocidos en Chile por
+  nuestros precios bajos y por ser una empresa líder en la entrega de
+  soluciones de vigilancia IP por Internet, y al alcance de todo el mundo.</p>
+  <p style="text-align:justify;">Foscam llegó al mercado local en enero del
+  año 2012, uno de los primeros países de Sudamérica en distribuir la
+  marca. Con precios competitivos, Foscam fue abriendo camino y hoy es una
+  de las marcas líderes del segmento. Hemos obtenido procesos de
+  certificación importantes: aprobación FCC en todas nuestras cámaras IP
+  inalámbricas, y certificación internacional CE y RoHS desde el inicio.</p>
+</section>
+
+<!-- ===================== NUEVO — bloque NAP + confianza ===================== -->
+<section class="cms-block cms-block--nap">
+  <h3 class="page-subheading">Datos de contacto</h3>
+  <p>
+    <strong>Foscam Chile</strong><br>
+    {{DIRECCION_FISICA — o "Atención 100% online, despacho a todo Chile" si no hay local físico}}<br>
+    Teléfono / WhatsApp: {{TELEFONO — confirmado: +56 9 4949 2042}}<br>
+    Horario de atención: {{HORARIO}}<br>
+    Sitio web: https://foscam.cl
+  </p>
+  <p>
+    {{ES_DISTRIBUIDOR_OFICIAL — ej: "Somos distribuidor oficial de Foscam
+    en Chile" o "Somos revendedor autorizado de productos Foscam en Chile"
+    — usar la afirmación que sea legalmente correcta}}. Todos nuestros
+    productos cuentan con garantía oficial del fabricante y soporte técnico
+    en español.
+  </p>
+  <p class="cms-block__note">
+    Importante: estos mismos datos de contacto (nombre, teléfono, horario)
+    deben coincidir exactamente con los de Google Business Profile y las
+    redes sociales de Foscam Chile — la consistencia de NAP es una señal de
+    confianza tanto para buscadores tradicionales como para motores de IA
+    generativa.
+  </p>
+</section>
+
+<!-- ============== NUEVO — comparativa "¿qué cámara elegir?" ============== -->
+<section class="cms-block cms-block--compare">
+  <h3 class="page-subheading">¿Qué cámara elegir según tu necesidad?</h3>
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Necesidad</th>
+        <th>Recomendación</th>
+        <th>Por qué</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Vigilar el interior de la casa (living, dormitorio, guardería)</td>
+        <td>Cámara IP de interior (ej. Foscam X5)</td>
+        <td>Detección de personas por IA, audio bidireccional, no necesita resistencia al agua</td>
+      </tr>
+      <tr>
+        <td>Vigilar patio, entrada o fachada</td>
+        <td>Cámara IP de exterior IP66 (ej. Foscam V5P)</td>
+        <td>Resiste lluvia y clima, visión nocturna con luz, sirena disuasiva</td>
+      </tr>
+      <tr>
+        <td>Casa o local sin buena señal WiFi</td>
+        <td>Cámara o grabador con conexión PoE (cable de red)</td>
+        <td>Alimentación y datos por el mismo cable, sin depender del WiFi</td>
+      </tr>
+      <tr>
+        <td>Ya tengo cámaras análogas/CCTV instaladas</td>
+        <td>Grabador XVR</td>
+        <td>Acepta cámaras análogas por coaxial y, en varios modelos, también cámaras IP</td>
+      </tr>
+      <tr>
+        <td>Negocio con muchas cámaras (8 o más)</td>
+        <td>Grabador NVR de 16 a 32 canales + disco de 2 TB o más</td>
+        <td>Escala a más cámaras sin perder rendimiento ni días de respaldo</td>
+      </tr>
+      <tr>
+        <td>Monitorear a un bebé o adulto mayor</td>
+        <td>Cámara de interior con audio bidireccional</td>
+        <td>Permite hablar a distancia y recibir alertas de movimiento/sonido</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="cms-block">
+  <h3 class="page-subheading">Nuestro equipo</h3>
+  <p style="text-align:justify;"><strong class="dark">El equipo de técnicos
+  en Foscam siempre está dispuesto a ayudarte con su soporte.</strong></p>
+  <p style="text-align:justify;">Cuando compras una cámara o contratas un
+  servicio directamente en foscam.cl, además del producto recibes despacho
+  eficiente desde nuestros almacenes y un servicio postventa completo:
+  asesoría técnica antes de instalar, atención telefónica, material de
+  apoyo y video-tutoriales de instalación después de la compra.</p>
+</section>
+
+<!-- Los testimonios existentes (Nahir Guerrero Droguett, Luz Angélica
+     Rodríguez Santo, Gabriel Boré) se conservan tal cual — no requieren
+     cambio de contenido, solo el restyle de foscam-redesign-overrides.css. -->

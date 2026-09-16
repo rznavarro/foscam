@@ -1,0 +1,50 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué diferencia hay entre una cámara IP de interior y una de exterior?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Las cámaras de interior no necesitan certificación contra agua/polvo (IP66), por lo que suelen ser más compactas y económicas. No deben instalarse a la intemperie: la humedad y la lluvia pueden dañarlas. Si necesitas cubrir un patio, entrada o fachada, usa una cámara de exterior en vez de instalar una de interior fuera de la casa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Una cámara de interior puede detectar personas y no solo movimiento?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, los modelos más nuevos como la Foscam X5 usan detección por inteligencia artificial para distinguir personas de mascotas u otros movimientos, lo que reduce notificaciones falsas en el celular."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo escuchar y hablar a través de una cámara de interior?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La mayoría de las cámaras IP de interior Foscam incluyen audio bidireccional (micrófono y parlante), lo que permite hablar con quien esté en la habitación desde la app del celular."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se puede tapar la cámara para tener privacidad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, varios modelos de interior tienen una función de modo privacidad que gira el lente o desactiva imagen y sonido manualmente desde la app."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué necesito para empezar a usar una cámara de interior Foscam?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Solo necesitas la cámara, una conexión WiFi de 2.4GHz y la app gratuita de Foscam, disponible para Android e iOS. La configuración inicial toma unos minutos escaneando un código QR desde la app."
+      }
+    }
+  ]
+}
+</script>
+
+Ubicación: página de categoría https://foscam.cl/18-camaras-ip-de-interior

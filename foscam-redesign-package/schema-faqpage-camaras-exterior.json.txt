@@ -1,0 +1,53 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué cámara de exterior aguanta la lluvia y el clima en Chile?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Para exteriores en Chile se recomienda una cámara con certificación IP66 o superior, que resiste lluvia, polvo y chorros de agua directos. La mayoría de las cámaras Foscam de exterior (como la línea V5P) cumplen IP66 y están probadas para operar entre -10°C y 50°C, por lo que funcionan bien tanto en el norte como en el sur del país."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Necesito internet para instalar una cámara IP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Las cámaras IP necesitan conexión a internet (WiFi o cable de red) para que puedas verlas remotamente desde el celular. Si el lugar de instalación no tiene buena señal WiFi, es mejor usar un modelo PoE (alimentación y datos por el mismo cable de red) o un repetidor WiFi cercano a la cámara."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Las cámaras de exterior necesitan visión nocturna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, para vigilancia 24 horas se recomienda que la cámara tenga visión nocturna infrarroja o, idealmente, luz blanca/iluminación integrada como en la V5P, que además de grabar en color de noche puede actuar como disuasivo con sirena y luz activada por detección de movimiento."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Dónde se guardan las grabaciones de una cámara de exterior?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende del modelo: algunas cámaras graban en una tarjeta microSD local, otras se conectan a un grabador NVR, y otras ofrecen almacenamiento en la nube por suscripción. Antes de comprar, confirma qué método de almacenamiento usa el modelo específico que te interesa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué garantía tienen las cámaras Foscam en Chile?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Los productos Foscam vendidos por Foscam Chile cuentan con garantía oficial del fabricante y soporte técnico en español, con respaldo local para reclamos y asistencia de instalación."
+      }
+    }
+  ]
+}
+</script>
+
+Ubicación: página de categoría https://foscam.cl/19-camaras-de-exterior
+Debe emitirse una sola vez por página (no duplicar si la categoría ya tiene
+otro FAQPage). Validar en Fase B con la Rich Results Test de Google antes
+de publicar.

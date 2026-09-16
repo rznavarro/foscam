@@ -1,0 +1,50 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuál es la diferencia entre un NVR y un XVR?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un NVR recibe video ya digitalizado desde cámaras IP por red. Un XVR es un grabador híbrido que acepta cámaras analógicas HD por cable coaxial y, en varios modelos, también cámaras IP. Si tu instalación es 100% IP, un NVR es más simple; si tienes cámaras análogas/CCTV, necesitas un XVR."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuántas cámaras puedo conectar a un grabador?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende del modelo: los grabadores de entrada van de 4 a 16 canales, y los de mayor capacidad soportan 32 canales o más."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿El grabador necesita internet para funcionar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No para grabar localmente, pero sí para ver las cámaras en vivo desde el celular fuera de casa; el grabador debe estar conectado al router para habilitar el acceso remoto."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto disco duro necesito para un NVR/XVR?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende de la cantidad de cámaras, resolución y días de respaldo. Un sistema de 4 a 8 cámaras HD con grabación continua suele requerir entre 1 TB y 4 TB para 15 a 30 días de grabación."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se puede instalar un NVR/XVR sin ayuda de un técnico?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es posible para usuarios con conocimientos básicos de redes, pero la mayoría prefiere apoyo técnico para el cableado, la configuración de red y el acceso remoto. Foscam Chile ofrece soporte técnico y, según la zona, servicio de instalación."
+      }
+    }
+  ]
+}
+</script>
+
+Ubicación: página de categoría https://foscam.cl/12-grabador-video-xvr-nvr
