@@ -1,0 +1,13 @@
+# Next.js
+/.next/
+/out/
+node_modules/
+npm-debug.log*
+
+# env
+.env*.local
+
+# misc
+.DS_Store
+*.pem
+_products_extracted.json
