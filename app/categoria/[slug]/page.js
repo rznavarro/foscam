@@ -77,7 +77,7 @@ export default async function CategoryPage({ params }) {
   return (
     <>
       <section className="bg-offwhite py-12">
-        <div className="mx-auto max-w-6xl px-4">
+        <div className="reveal mx-auto max-w-6xl px-4">
           <h1 className="font-heading text-3xl font-semibold text-ink">{category.name}</h1>
           <p className="mt-2 max-w-2xl text-ink/70">{category.description}</p>
         </div>

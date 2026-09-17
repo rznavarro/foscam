@@ -6,10 +6,10 @@ const stats = [
 
 export default function TrustStats() {
   return (
-    <section className="bg-navy-deep py-12 text-white">
-      <div className="mx-auto flex max-w-6xl flex-wrap justify-center gap-10 px-4 text-center">
+    <section className="px-4 py-6">
+      <div className="reveal mx-auto flex max-w-6xl flex-wrap justify-center gap-10 rounded-[2rem] bg-navy-deep px-6 py-12 text-white sm:gap-16">
         {stats.map((s) => (
-          <div key={s.label} className="min-w-[160px]">
+          <div key={s.label} className="min-w-[140px] text-center">
             <span className="block font-mono text-3xl font-semibold">{s.number}</span>
             <span className="text-xs uppercase tracking-wide text-taupe">{s.label}</span>
           </div>

@@ -1,9 +1,11 @@
+import Image from "next/image";
 import Link from "next/link";
 import TrustStats from "@/components/TrustStats";
 import ProductCard from "@/components/ProductCard";
 import FaqSection from "@/components/FaqSection";
 import Testimonials from "@/components/Testimonials";
-import { products } from "@/data/products";
+import ChevronKnob from "@/components/ChevronKnob";
+import { products, getProductBySlug } from "@/data/products";
 
 const homeFaqs = [
   {
@@ -26,27 +28,65 @@ const homeFaqs = [
 
 export default function HomePage() {
   const featured = products.slice(0, 8);
+  const heroProduct = getProductBySlug(
+    "2-foscam-v5p-camara-ip-de-exterior-5mp-con-audio-iluminacion-y-sirena-incluida"
+  );
 
   return (
     <>
-      <section className="bg-offwhite">
-        <div className="mx-auto flex max-w-6xl flex-col items-start gap-6 px-4 py-20">
-          <p className="font-mono text-xs uppercase tracking-widest text-signal-red">
-            Con nuestra app gratuita
-          </p>
-          <h1 className="max-w-2xl font-heading text-4xl font-semibold leading-tight text-ink sm:text-5xl">
-            Tu hogar siempre está seguro
-          </h1>
-          <p className="max-w-xl text-ink/70">
-            Cámaras de seguridad IP, grabadores NVR/XVR y accesorios de videovigilancia,
-            con garantía oficial y soporte técnico en español en todo Chile.
-          </p>
-          <Link
-            href="/categoria/camaras-de-exterior"
-            className="rounded-full bg-signal-red px-6 py-3 font-heading text-sm font-semibold text-white transition hover:bg-signal-red-dark"
-          >
-            Ver cámaras de exterior
-          </Link>
+      <section className="relative overflow-hidden bg-gradient-to-b from-offwhite to-white">
+        <div className="mx-auto grid max-w-6xl gap-16 px-4 py-20 md:grid-cols-2 md:items-center md:py-28">
+          <div className="reveal">
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-signal-red">
+              Con nuestra app gratuita
+            </p>
+            <h1 className="mt-4 font-heading text-5xl font-medium leading-[1.05] tracking-tight text-ink sm:text-6xl">
+              Tu hogar
+              <br />
+              siempre está
+              <br />
+              seguro
+            </h1>
+            <p className="mt-6 max-w-md text-ink/60">
+              Cámaras de seguridad IP, grabadores NVR/XVR y accesorios de videovigilancia,
+              con garantía oficial y soporte técnico en español en todo Chile.
+            </p>
+            <div className="mt-8">
+              <Link
+                href="/categoria/camaras-de-exterior"
+                className="group inline-flex items-center gap-4 rounded-full bg-signal-red py-2 pl-6 pr-2 font-heading text-sm font-semibold text-white shadow-card transition hover:-translate-y-0.5 hover:shadow-card-hover"
+              >
+                Ver cámaras de exterior
+                <ChevronKnob bg="bg-signal-red-dark" />
+              </Link>
+            </div>
+          </div>
+
+          {heroProduct && (
+            <div
+              className="reveal relative mx-auto w-full max-w-sm"
+              style={{ animationDelay: "150ms" }}
+            >
+              <div className="relative aspect-square overflow-hidden rounded-[2rem] border border-white/70 bg-white/50 shadow-card-hover backdrop-blur-xl">
+                <Image
+                  src={heroProduct.image}
+                  alt={heroProduct.name}
+                  fill
+                  sizes="(min-width: 768px) 24rem, 80vw"
+                  className="object-contain p-10"
+                />
+              </div>
+
+              <div className="absolute -bottom-6 -left-6 flex items-center gap-4 rounded-3xl border border-white/70 bg-white/85 px-6 py-4 shadow-card backdrop-blur-xl">
+                <span className="font-mono text-3xl font-semibold text-ink">+10</span>
+                <span className="text-xs uppercase leading-tight tracking-wide text-taupe">
+                  Años
+                  <br />
+                  en Chile
+                </span>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 

@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import ChevronKnob from "@/components/ChevronKnob";
 import { products, getProductBySlug, formatPrice } from "@/data/products";
 
 export function generateStaticParams() {
@@ -52,7 +53,7 @@ export default async function ProductPage({ params }) {
       </nav>
 
       <div className="grid gap-10 sm:grid-cols-2">
-        <div className="relative aspect-square overflow-hidden rounded-base bg-offwhite">
+        <div className="reveal relative aspect-square overflow-hidden rounded-base border border-white/70 bg-offwhite shadow-card">
           <Image
             src={product.image}
             alt={product.name}
@@ -62,7 +63,7 @@ export default async function ProductPage({ params }) {
           />
         </div>
 
-        <div>
+        <div className="reveal" style={{ animationDelay: "120ms" }}>
           <p className="text-xs uppercase tracking-wide text-taupe">{product.categoryName}</p>
           <h1 className="mt-2 font-heading text-2xl font-semibold text-ink sm:text-3xl">
             {product.name}
@@ -73,9 +74,10 @@ export default async function ProductPage({ params }) {
 
           <button
             type="button"
-            className="mt-6 w-full rounded-full bg-signal-red px-6 py-3 font-heading text-sm font-semibold text-white transition hover:bg-signal-red-dark sm:w-auto"
+            className="group mt-6 inline-flex w-full items-center justify-center gap-4 rounded-full bg-signal-red py-2 pl-6 pr-2 font-heading text-sm font-semibold text-white shadow-card transition hover:-translate-y-0.5 hover:shadow-card-hover sm:w-auto"
           >
             Añadir al carrito
+            <ChevronKnob bg="bg-signal-red-dark" />
           </button>
 
           <div className="mt-8 space-y-2 text-sm text-ink/70">

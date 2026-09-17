@@ -9,3 +9,25 @@ body {
 h1, h2, h3, h4 {
   @apply font-heading;
 }
+
+/* Entrada sutil, inspirada en el patrón "reveal" del brief de referencia:
+   visible por defecto, solo anima si el usuario no pidió menos movimiento. */
+.reveal {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    animation: reveal-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+}
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
