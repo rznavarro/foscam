@@ -10,7 +10,7 @@ export default function FaqSection({ title = "Preguntas frecuentes", items }) {
   };
 
   return (
-    <section className="bg-offwhite py-14">
+    <section className="bg-ivory py-14">
       <div className="mx-auto max-w-3xl px-4">
         <h2 className="mb-6 font-heading text-2xl font-semibold text-ink">{title}</h2>
         <div className="divide-y divide-ink/10">

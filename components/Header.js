@@ -10,7 +10,7 @@ export default function Header() {
           href="/"
           className="font-heading text-lg font-semibold tracking-tight text-ink"
         >
-          <span className="text-signal-red">FOS</span>CAM
+          <span className="text-brass">FOS</span>CAM
         </Link>
 
         <nav className="hidden items-center gap-6 text-sm font-medium text-ink/70 lg:flex">
@@ -30,10 +30,10 @@ export default function Header() {
 
         <Link
           href="/categoria/camaras-de-exterior"
-          className="group flex items-center gap-3 rounded-full bg-navy-deep py-1 pl-4 pr-1 font-heading text-sm font-medium text-white transition hover:-translate-y-0.5"
+          className="group flex items-center gap-3 rounded-full bg-ink py-1 pl-4 pr-1 font-heading text-sm font-medium text-white transition hover:-translate-y-0.5"
         >
           <span className="hidden sm:inline">Ver catálogo</span>
-          <ChevronKnob size="h-8 w-8" bg="bg-signal-red group-hover:bg-signal-red-dark" />
+          <ChevronKnob size="h-8 w-8" bg="bg-brass group-hover:bg-brass-dark" />
         </Link>
       </header>
     </div>

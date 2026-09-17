@@ -1,12 +1,13 @@
-import { Space_Grotesk, Inter, IBM_Plex_Mono } from "next/font/google";
+import { Fraunces, Inter, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
-const heading = Space_Grotesk({
+const heading = Fraunces({
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: ["500", "600", "700", "900"],
+  style: ["normal", "italic"],
   variable: "--font-heading",
   display: "swap",
 });

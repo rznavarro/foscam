@@ -8,7 +8,7 @@ export default function ProductCard({ product }) {
       href={`/producto/${product.slug}`}
       className="group block overflow-hidden rounded-base bg-white shadow-card transition hover:-translate-y-1 hover:shadow-card-hover"
     >
-      <div className="relative aspect-square bg-offwhite">
+      <div className="relative aspect-square bg-ivory">
         <Image
           src={product.image}
           alt={product.name}
@@ -22,7 +22,7 @@ export default function ProductCard({ product }) {
         <h3 className="line-clamp-2 font-heading text-sm font-medium text-ink">
           {product.name}
         </h3>
-        <p className="font-mono text-base font-semibold text-signal-red">
+        <p className="font-mono text-base font-semibold text-brass">
           {formatPrice(product.price)}
         </p>
       </div>

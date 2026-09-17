@@ -30,7 +30,7 @@ export default function Testimonials() {
               key={t.name}
               className="rounded-base border border-ink/10 bg-white p-6 shadow-card"
             >
-              <span className="font-heading text-3xl text-signal-red">“</span>
+              <span className="font-heading text-3xl text-brass">“</span>
               <p className="mt-2 text-sm text-ink/80">{t.quote}</p>
               <p className="mt-4 font-heading text-sm font-medium text-ink">{t.name}</p>
             </div>

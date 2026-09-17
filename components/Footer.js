@@ -3,11 +3,11 @@ import { categories } from "@/data/categories";
 
 export default function Footer() {
   return (
-    <footer className="bg-navy-deep text-white">
+    <footer className="bg-ink text-white">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:grid-cols-3">
         <div>
           <p className="font-heading text-xl font-bold">
-            <span className="text-signal-red">FOS</span>CAM
+            <span className="text-brass">FOS</span>CAM
           </p>
           <p className="mt-3 text-sm text-white/70">
             Cámaras de seguridad, grabadores NVR/XVR y hogar inteligente en Chile.

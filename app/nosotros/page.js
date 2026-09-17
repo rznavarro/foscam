@@ -37,7 +37,7 @@ const compareRows = [
 export default function NosotrosPage() {
   return (
     <>
-      <section className="bg-offwhite py-14">
+      <section className="bg-ivory py-14">
         <div className="mx-auto max-w-3xl px-4">
           <h1 className="font-heading text-3xl font-semibold text-ink">
             Nosotros somos Foscam en Chile
@@ -68,7 +68,7 @@ export default function NosotrosPage() {
         </p>
       </section>
 
-      <section className="bg-offwhite py-14">
+      <section className="bg-ivory py-14">
         <div className="mx-auto max-w-4xl px-4">
           <h2 className="font-heading text-2xl font-semibold text-ink">
             ¿Qué cámara elegir según tu necesidad?

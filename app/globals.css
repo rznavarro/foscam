@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 body {
-  @apply bg-white text-ink font-body;
+  @apply bg-ivory text-ink font-body;
 }
 
 h1, h2, h3, h4 {
-  @apply font-heading;
+  @apply font-heading tracking-tight;
 }
 
 /* Entrada sutil, inspirada en el patrón "reveal" del brief de referencia:

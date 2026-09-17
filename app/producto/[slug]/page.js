@@ -53,7 +53,7 @@ export default async function ProductPage({ params }) {
       </nav>
 
       <div className="grid gap-10 sm:grid-cols-2">
-        <div className="reveal relative aspect-square overflow-hidden rounded-base border border-white/70 bg-offwhite shadow-card">
+        <div className="reveal relative aspect-square overflow-hidden rounded-base border border-white/70 bg-ivory shadow-card">
           <Image
             src={product.image}
             alt={product.name}
@@ -68,16 +68,16 @@ export default async function ProductPage({ params }) {
           <h1 className="mt-2 font-heading text-2xl font-semibold text-ink sm:text-3xl">
             {product.name}
           </h1>
-          <p className="mt-4 font-mono text-3xl font-semibold text-signal-red">
+          <p className="mt-4 font-mono text-3xl font-semibold text-brass">
             {formatPrice(product.price)}
           </p>
 
           <button
             type="button"
-            className="group mt-6 inline-flex w-full items-center justify-center gap-4 rounded-full bg-signal-red py-2 pl-6 pr-2 font-heading text-sm font-semibold text-white shadow-card transition hover:-translate-y-0.5 hover:shadow-card-hover sm:w-auto"
+            className="group mt-6 inline-flex w-full items-center justify-center gap-4 rounded-full bg-brass py-2 pl-6 pr-2 font-heading text-sm font-semibold text-white shadow-card transition hover:-translate-y-0.5 hover:shadow-card-hover sm:w-auto"
           >
             Añadir al carrito
-            <ChevronKnob bg="bg-signal-red-dark" />
+            <ChevronKnob bg="bg-brass-dark" />
           </button>
 
           <div className="mt-8 space-y-2 text-sm text-ink/70">

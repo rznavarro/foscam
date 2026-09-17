@@ -34,10 +34,10 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-gradient-to-b from-offwhite to-white">
+      <section className="relative overflow-hidden bg-gradient-to-b from-ivory to-white">
         <div className="mx-auto grid max-w-6xl gap-16 px-4 py-20 md:grid-cols-2 md:items-center md:py-28">
           <div className="reveal">
-            <p className="font-mono text-xs uppercase tracking-[0.2em] text-signal-red">
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-brass">
               Con nuestra app gratuita
             </p>
             <h1 className="mt-4 font-heading text-5xl font-medium leading-[1.05] tracking-tight text-ink sm:text-6xl">
@@ -54,10 +54,10 @@ export default function HomePage() {
             <div className="mt-8">
               <Link
                 href="/categoria/camaras-de-exterior"
-                className="group inline-flex items-center gap-4 rounded-full bg-signal-red py-2 pl-6 pr-2 font-heading text-sm font-semibold text-white shadow-card transition hover:-translate-y-0.5 hover:shadow-card-hover"
+                className="group inline-flex items-center gap-4 rounded-full bg-brass py-2 pl-6 pr-2 font-heading text-sm font-semibold text-white shadow-card transition hover:-translate-y-0.5 hover:shadow-card-hover"
               >
                 Ver cámaras de exterior
-                <ChevronKnob bg="bg-signal-red-dark" />
+                <ChevronKnob bg="bg-brass-dark" />
               </Link>
             </div>
           </div>

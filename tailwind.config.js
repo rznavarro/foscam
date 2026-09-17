@@ -7,13 +7,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        ink: "#12181C",
-        "navy-deep": "#0E2A38",
-        "signal-red": "#D8402C",
-        "signal-red-dark": "#B6321F",
-        offwhite: "#F6F5F2",
-        taupe: "#8A8377",
-        "signal-green": "#2E9E6C",
+        // Onyx & Brass — paleta editorial/lujo
+        ink: "#17140F",
+        ivory: "#F7F2E9",
+        brass: "#A8763E",
+        "brass-dark": "#8C5A2B",
+        forest: "#2C3B2E",
+        taupe: "#8A8073",
       },
       fontFamily: {
         heading: ["var(--font-heading)"],
@@ -24,8 +24,8 @@ module.exports = {
         base: "16px",
       },
       boxShadow: {
-        card: "0 4px 12px rgba(18,24,28,0.08)",
-        "card-hover": "0 12px 24px rgba(18,24,28,0.12)",
+        card: "0 4px 12px rgba(23,20,15,0.08)",
+        "card-hover": "0 12px 24px rgba(23,20,15,0.14)",
       },
     },
   },
