@@ -1,4 +1,5 @@
 import Testimonials from "@/components/Testimonials";
+import Eyebrow from "@/components/Eyebrow";
 
 export const metadata = {
   title: "Nosotros",
@@ -37,12 +38,13 @@ const compareRows = [
 export default function NosotrosPage() {
   return (
     <>
-      <section className="bg-ivory py-14">
-        <div className="mx-auto max-w-3xl px-4">
-          <h1 className="font-heading text-3xl font-semibold text-ink">
+      <section className="noise-overlay bg-panel py-14">
+        <div className="relative z-[2] mx-auto max-w-3xl px-4">
+          <Eyebrow>Nosotros</Eyebrow>
+          <h1 className="font-heading text-3xl font-semibold text-ivory">
             Nosotros somos Foscam en Chile
           </h1>
-          <p className="mt-4 text-ink/80">
+          <p className="mt-4 text-ivory/70">
             Foscam Chile es una empresa que vende cámaras de vigilancia y ofrece servicios de
             instalación, configuración y mantención de equipos de seguridad. Foscam llegó al
             mercado local en enero de 2012, uno de los primeros países de Sudamérica en
@@ -54,29 +56,30 @@ export default function NosotrosPage() {
       </section>
 
       <section className="mx-auto max-w-3xl px-4 py-14">
-        <h2 className="font-heading text-2xl font-semibold text-ink">Datos de contacto</h2>
-        <p className="mt-4 text-ink/80">
-          <strong className="text-ink">Foscam Chile</strong>
+        <h2 className="font-heading text-2xl font-semibold text-ivory">Datos de contacto</h2>
+        <p className="mt-4 text-ivory/70">
+          <strong className="text-ivory">Foscam Chile</strong>
           <br />
           Teléfono / WhatsApp: +56 9 4949 2042
           <br />
           Sitio web: foscam.cl
         </p>
-        <p className="mt-4 text-ink/80">
+        <p className="mt-4 text-ivory/70">
           Todos nuestros productos cuentan con garantía oficial del fabricante y soporte técnico
           en español.
         </p>
       </section>
 
-      <section className="bg-ivory py-14">
+      <section className="bg-panel py-14">
         <div className="mx-auto max-w-4xl px-4">
-          <h2 className="font-heading text-2xl font-semibold text-ink">
+          <Eyebrow>Guía de compra</Eyebrow>
+          <h2 className="font-heading text-2xl font-semibold text-ivory">
             ¿Qué cámara elegir según tu necesidad?
           </h2>
-          <div className="mt-6 overflow-x-auto rounded-base bg-white shadow-card">
+          <div className="glass-card mt-6 overflow-x-auto rounded-base">
             <table className="w-full text-left text-sm">
               <thead>
-                <tr className="border-b border-ink/10 text-xs uppercase tracking-wide text-taupe">
+                <tr className="border-b border-brass/10 text-xs uppercase tracking-wide text-taupe">
                   <th className="p-4">Necesidad</th>
                   <th className="p-4">Recomendación</th>
                   <th className="p-4">Por qué</th>
@@ -84,10 +87,10 @@ export default function NosotrosPage() {
               </thead>
               <tbody>
                 {compareRows.map((row) => (
-                  <tr key={row.need} className="border-b border-ink/5 last:border-0">
-                    <td className="p-4 font-medium text-ink">{row.need}</td>
-                    <td className="p-4 text-ink/80">{row.rec}</td>
-                    <td className="p-4 text-ink/60">{row.why}</td>
+                  <tr key={row.need} className="border-b border-brass/5 last:border-0">
+                    <td className="p-4 font-medium text-ivory">{row.need}</td>
+                    <td className="p-4 text-ivory/70">{row.rec}</td>
+                    <td className="p-4 text-ivory/50">{row.why}</td>
                   </tr>
                 ))}
               </tbody>

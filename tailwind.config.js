@@ -7,13 +7,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Onyx & Brass — paleta editorial/lujo
-        ink: "#17140F",
-        ivory: "#F7F2E9",
-        brass: "#A8763E",
-        "brass-dark": "#8C5A2B",
-        forest: "#2C3B2E",
-        taupe: "#8A8073",
+        // Onyx & Brass — versión oscura editorial/lujo
+        ink: "#0B0A07", // fondo de página, casi negro cálido
+        panel: "#15130D", // superficie de cards/secciones
+        "panel-2": "#1C1810", // superficie alterna (hover, destacado)
+        ivory: "#F5F1E8", // texto principal sobre fondo oscuro
+        brass: "#C9A84C",
+        "brass-light": "#E2C97E",
+        "brass-dark": "#8C6A2E",
+        forest: "#3F7A5C",
+        taupe: "#9C978C",
       },
       fontFamily: {
         heading: ["var(--font-heading)"],
@@ -24,8 +27,9 @@ module.exports = {
         base: "16px",
       },
       boxShadow: {
-        card: "0 4px 12px rgba(23,20,15,0.08)",
-        "card-hover": "0 12px 24px rgba(23,20,15,0.14)",
+        card: "0 1px 0 rgba(255,255,255,0.05) inset, 0 20px 40px rgba(0,0,0,0.45)",
+        "card-hover":
+          "0 1px 0 rgba(255,255,255,0.07) inset, 0 24px 60px rgba(0,0,0,0.55), 0 0 40px rgba(201,168,76,0.10)",
       },
     },
   },

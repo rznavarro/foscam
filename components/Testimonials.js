@@ -1,3 +1,5 @@
+import Eyebrow from "@/components/Eyebrow";
+
 // Testimonios reales tomados de la página "Nosotros" de foscam.cl
 const testimonials = [
   {
@@ -19,20 +21,18 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="bg-white py-14">
+    <section className="bg-ink py-16">
       <div className="mx-auto max-w-6xl px-4">
-        <h2 className="mb-8 font-heading text-2xl font-semibold text-ink">
+        <Eyebrow>Clientes</Eyebrow>
+        <h2 className="mb-8 font-heading text-2xl font-semibold text-ivory">
           Lo que dicen nuestros clientes
         </h2>
         <div className="grid gap-6 sm:grid-cols-3">
           {testimonials.map((t) => (
-            <div
-              key={t.name}
-              className="rounded-base border border-ink/10 bg-white p-6 shadow-card"
-            >
+            <div key={t.name} className="glass-card rounded-base p-6">
               <span className="font-heading text-3xl text-brass">“</span>
-              <p className="mt-2 text-sm text-ink/80">{t.quote}</p>
-              <p className="mt-4 font-heading text-sm font-medium text-ink">{t.name}</p>
+              <p className="mt-2 text-sm text-ivory/70">{t.quote}</p>
+              <p className="mt-4 font-heading text-sm font-medium text-ivory">{t.name}</p>
             </div>
           ))}
         </div>

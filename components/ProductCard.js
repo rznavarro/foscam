@@ -8,11 +8,11 @@ export default function ProductCard({ product }) {
   return (
     <Link
       href={`/producto/${product.slug}`}
-      className="group block overflow-hidden rounded-base bg-white shadow-card transition hover:-translate-y-1 hover:shadow-card-hover"
+      className="glass-card group block overflow-hidden rounded-base shadow-card transition hover:-translate-y-1 hover:shadow-card-hover"
     >
-      <div className="relative aspect-square overflow-hidden bg-ivory">
+      <div className="relative aspect-square overflow-hidden bg-panel-2">
         {badge && (
-          <span className="absolute left-3 top-3 z-10 rounded-full bg-ink px-3 py-1 text-[11px] font-medium uppercase tracking-wide text-white">
+          <span className="absolute left-3 top-3 z-10 rounded-full bg-brass px-3 py-1 text-[11px] font-medium uppercase tracking-wide text-ink">
             {badge}
           </span>
         )}
@@ -26,10 +26,10 @@ export default function ProductCard({ product }) {
       </div>
       <div className="space-y-1 p-4">
         <p className="text-xs uppercase tracking-wide text-taupe">{product.categoryName}</p>
-        <h3 className="line-clamp-2 font-heading text-sm font-medium text-ink">
+        <h3 className="line-clamp-2 font-heading text-sm font-medium text-ivory">
           {product.name}
         </h3>
-        <p className="font-mono text-base font-semibold text-brass">
+        <p className="font-mono text-base font-semibold text-brass-light">
           {formatPrice(product.price)}
         </p>
       </div>

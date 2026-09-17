@@ -3,15 +3,31 @@
 @tailwind utilities;
 
 body {
-  @apply bg-ivory text-ink font-body;
+  @apply bg-ink text-ivory font-body;
 }
 
 h1, h2, h3, h4 {
   @apply font-heading tracking-tight;
 }
 
-/* Entrada sutil, inspirada en el patrón "reveal" del brief de referencia:
-   visible por defecto, solo anima si el usuario no pidió menos movimiento. */
+::selection {
+  background: rgba(201, 168, 76, 0.32);
+  color: #f5f5f0;
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0a07;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2412;
+  border-radius: 6px;
+}
+
+/* Entrada sutil: visible por defecto, solo anima si el usuario no pidió
+   menos movimiento. */
 .reveal {
   opacity: 1;
 }
@@ -30,4 +46,52 @@ h1, h2, h3, h4 {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Card de vidrio con borde degradado bronce — técnica: un ::before con
+   padding + mask-composite:exclude, para que solo se vea el borde. */
+.glass-card {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.glass-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    180deg,
+    rgba(201, 168, 76, 0.5) 0%,
+    rgba(255, 255, 255, 0.14) 22%,
+    rgba(255, 255, 255, 0) 42%,
+    rgba(255, 255, 255, 0) 62%,
+    rgba(255, 255, 255, 0.14) 82%,
+    rgba(201, 168, 76, 0.5) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Textura de grano sutil sobre superficies oscuras, para que no se vean
+   planas. Ruido genérico vía SVG feTurbulence, sin dependencias externas. */
+.noise-overlay {
+  position: relative;
+}
+.noise-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  mix-blend-mode: soft-light;
+  z-index: 1;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix type='matrix' values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 240px 240px;
 }

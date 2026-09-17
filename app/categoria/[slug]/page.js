@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import ProductCard from "@/components/ProductCard";
 import FaqSection from "@/components/FaqSection";
+import Eyebrow from "@/components/Eyebrow";
 import { categories, getCategoryBySlug } from "@/data/categories";
 import { getProductsByCategory, products } from "@/data/products";
 
@@ -76,16 +77,17 @@ export default async function CategoryPage({ params }) {
 
   return (
     <>
-      <section className="bg-ivory py-12">
-        <div className="reveal mx-auto max-w-6xl px-4">
-          <h1 className="font-heading text-3xl font-semibold text-ink">{category.name}</h1>
-          <p className="mt-2 max-w-2xl text-ink/70">{category.description}</p>
+      <section className="noise-overlay bg-panel py-12">
+        <div className="reveal relative z-[2] mx-auto max-w-6xl px-4">
+          <Eyebrow>Categoría</Eyebrow>
+          <h1 className="font-heading text-3xl font-semibold text-ivory">{category.name}</h1>
+          <p className="mt-2 max-w-2xl text-ivory/60">{category.description}</p>
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-12">
         {items.length === 0 ? (
-          <p className="text-ink/60">Sin productos disponibles en esta categoría por ahora.</p>
+          <p className="text-ivory/50">Sin productos disponibles en esta categoría por ahora.</p>
         ) : (
           <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
             {items.map((product) => (

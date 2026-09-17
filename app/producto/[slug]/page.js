@@ -42,17 +42,17 @@ export default async function ProductPage({ params }) {
   return (
     <section className="mx-auto max-w-5xl px-4 py-12">
       <nav className="mb-6 text-xs text-taupe">
-        <Link href="/" className="hover:text-ink">
+        <Link href="/" className="hover:text-brass-light">
           Inicio
         </Link>{" "}
         /{" "}
-        <Link href={`/categoria/${product.categorySlug}`} className="hover:text-ink">
+        <Link href={`/categoria/${product.categorySlug}`} className="hover:text-brass-light">
           {product.categoryName}
         </Link>
       </nav>
 
       <div className="grid gap-10 sm:grid-cols-2">
-        <div className="reveal relative aspect-square overflow-hidden rounded-base border border-white/70 bg-ivory shadow-card">
+        <div className="reveal glass-card relative aspect-square overflow-hidden rounded-base bg-panel-2 shadow-card">
           <Image
             src={product.image}
             alt={product.name}
@@ -64,10 +64,10 @@ export default async function ProductPage({ params }) {
 
         <div className="reveal" style={{ animationDelay: "120ms" }}>
           <p className="text-xs uppercase tracking-wide text-taupe">{product.categoryName}</p>
-          <h1 className="mt-2 font-heading text-2xl font-semibold text-ink sm:text-3xl">
+          <h1 className="mt-2 font-heading text-2xl font-semibold text-ivory sm:text-3xl">
             {product.name}
           </h1>
-          <p className="mt-4 font-mono text-3xl font-semibold text-brass">
+          <p className="mt-4 font-mono text-3xl font-semibold text-brass-light">
             {formatPrice(product.price)}
           </p>
           <p className="mt-2 flex items-center gap-2 text-sm text-forest">
@@ -77,12 +77,12 @@ export default async function ProductPage({ params }) {
 
           <button
             type="button"
-            className="mt-6 w-full rounded-full bg-brass py-3.5 font-heading text-sm font-semibold text-white shadow-card transition hover:-translate-y-0.5 hover:bg-brass-dark hover:shadow-card-hover sm:w-auto sm:px-10"
+            className="mt-6 w-full rounded-full bg-brass py-3.5 font-heading text-sm font-semibold text-ink shadow-card transition hover:-translate-y-0.5 hover:bg-brass-light hover:shadow-card-hover sm:w-auto sm:px-10"
           >
             Añadir al carrito
           </button>
 
-          <div className="mt-6 space-y-2 border-t border-ink/10 pt-6 text-sm text-ink/70">
+          <div className="mt-6 space-y-2 border-t border-brass/10 pt-6 text-sm text-ivory/60">
             <p>✓ Garantía oficial Foscam</p>
             <p>✓ Soporte técnico en español</p>
             <p className="text-taupe">Medios de pago: Webpay · PayPal · Transferencia</p>
