@@ -1,7 +1,6 @@
 const stats = [
   { number: "+10", label: "Años en Chile" },
   { number: "+500", label: "Instalaciones realizadas" },
-  { number: "100%", label: "Garantía oficial Foscam" },
 ];
 
 export default function TrustStats() {

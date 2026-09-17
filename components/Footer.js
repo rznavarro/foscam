@@ -11,7 +11,6 @@ export default function Footer() {
           </p>
           <p className="mt-3 text-sm text-white/70">
             Cámaras de seguridad, grabadores NVR/XVR y hogar inteligente en Chile.
-            Garantía oficial y soporte técnico en español.
           </p>
         </div>
 

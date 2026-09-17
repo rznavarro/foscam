@@ -1,11 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import TrustStats from "@/components/TrustStats";
+import TrustBar from "@/components/TrustBar";
 import ProductCard from "@/components/ProductCard";
 import FaqSection from "@/components/FaqSection";
 import Testimonials from "@/components/Testimonials";
 import ChevronKnob from "@/components/ChevronKnob";
 import { products, getProductBySlug } from "@/data/products";
+
+const FEATURED_IDS = ["1", "2", "66", "105"];
 
 const homeFaqs = [
   {
@@ -27,7 +30,9 @@ const homeFaqs = [
 ];
 
 export default function HomePage() {
-  const featured = products.slice(0, 8);
+  const featured = FEATURED_IDS.map((id) => products.find((p) => p.id === id)).filter(
+    Boolean
+  );
   const heroProduct = getProductBySlug(
     "2-foscam-v5p-camara-ip-de-exterior-5mp-con-audio-iluminacion-y-sirena-incluida"
   );
@@ -48,8 +53,8 @@ export default function HomePage() {
               seguro
             </h1>
             <p className="mt-6 max-w-md text-ink/60">
-              Cámaras de seguridad IP, grabadores NVR/XVR y accesorios de videovigilancia,
-              con garantía oficial y soporte técnico en español en todo Chile.
+              Cámaras de seguridad IP, grabadores NVR/XVR y accesorios de videovigilancia
+              para cada rincón de tu hogar o negocio.
             </p>
             <div className="mt-8">
               <Link
@@ -90,10 +95,14 @@ export default function HomePage() {
         </div>
       </section>
 
+      <TrustBar />
+
       <TrustStats />
 
       <section className="mx-auto max-w-6xl px-4 py-16">
-        <h2 className="mb-8 font-heading text-2xl font-semibold text-ink">Ofertas del día</h2>
+        <h2 className="mb-8 font-heading text-2xl font-semibold text-ink">
+          Los favoritos de nuestros clientes
+        </h2>
         <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
           {featured.map((product) => (
             <ProductCard key={product.id} product={product} />

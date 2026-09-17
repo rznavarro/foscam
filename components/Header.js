@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { categories } from "@/data/categories";
-import ChevronKnob from "@/components/ChevronKnob";
 
 export default function Header() {
   return (
@@ -30,10 +29,9 @@ export default function Header() {
 
         <Link
           href="/categoria/camaras-de-exterior"
-          className="group flex items-center gap-3 rounded-full bg-ink py-1 pl-4 pr-1 font-heading text-sm font-medium text-white transition hover:-translate-y-0.5"
+          className="rounded-full bg-ink px-5 py-2.5 font-heading text-sm font-medium text-white transition hover:bg-ink/85"
         >
-          <span className="hidden sm:inline">Ver catálogo</span>
-          <ChevronKnob size="h-8 w-8" bg="bg-brass group-hover:bg-brass-dark" />
+          Ver catálogo
         </Link>
       </header>
     </div>

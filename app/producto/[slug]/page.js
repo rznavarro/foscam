@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import ChevronKnob from "@/components/ChevronKnob";
 import { products, getProductBySlug, formatPrice } from "@/data/products";
 
 export function generateStaticParams() {
@@ -71,19 +70,22 @@ export default async function ProductPage({ params }) {
           <p className="mt-4 font-mono text-3xl font-semibold text-brass">
             {formatPrice(product.price)}
           </p>
+          <p className="mt-2 flex items-center gap-2 text-sm text-forest">
+            <span className="h-1.5 w-1.5 rounded-full bg-forest" aria-hidden="true" />
+            Stock disponible — despacho a todo Chile
+          </p>
 
           <button
             type="button"
-            className="group mt-6 inline-flex w-full items-center justify-center gap-4 rounded-full bg-brass py-2 pl-6 pr-2 font-heading text-sm font-semibold text-white shadow-card transition hover:-translate-y-0.5 hover:shadow-card-hover sm:w-auto"
+            className="mt-6 w-full rounded-full bg-brass py-3.5 font-heading text-sm font-semibold text-white shadow-card transition hover:-translate-y-0.5 hover:bg-brass-dark hover:shadow-card-hover sm:w-auto sm:px-10"
           >
             Añadir al carrito
-            <ChevronKnob bg="bg-brass-dark" />
           </button>
 
-          <div className="mt-8 space-y-2 text-sm text-ink/70">
+          <div className="mt-6 space-y-2 border-t border-ink/10 pt-6 text-sm text-ink/70">
             <p>✓ Garantía oficial Foscam</p>
-            <p>✓ Envío a todo Chile</p>
             <p>✓ Soporte técnico en español</p>
+            <p className="text-taupe">Medios de pago: Webpay · PayPal · Transferencia</p>
           </div>
         </div>
       </div>
